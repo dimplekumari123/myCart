@@ -15,14 +15,19 @@ import com.moblileCart.service.UserServiceImpl;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	UserServiceImpl UserServiceImpl;
+	UserServiceImpl userServiceImpl;
 
 	@PostMapping("/registration")
 	public ResponseEntity<String> createRegistration(@RequestBody UserDto user) {
 
-		String msg = UserServiceImpl.createRegistration(user);
+		String msg = userServiceImpl.createRegistration(user);
 
 		return new ResponseEntity<String>(msg, HttpStatus.OK);
 
+	}
+	@PostMapping("/login")
+	public ResponseEntity<UserDto> userLogin(@RequestBody UserDto userdto ){
+		UserDto user=userServiceImpl.userLogin(userdto.getUserName(), userdto.getPassword());
+		return new ResponseEntity<UserDto> (user,HttpStatus.OK);
 	}
 }

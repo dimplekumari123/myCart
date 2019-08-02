@@ -3,7 +3,7 @@ package com.moblileCart.dto;
 public class UserDto {
 	private String userName;
 	private String email;
-	private Long moblileNo;
+	private int moblileNo;
 	private String password;
 	private String confirmPassword;
 	
@@ -19,10 +19,10 @@ public class UserDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Long getMoblileNo() {
+	public int getMoblileNo() {
 		return moblileNo;
 	}
-	public void setMoblileNo(Long moblileNo) {
+	public void setMoblileNo(int moblileNo) {
 		this.moblileNo = moblileNo;
 	}
 	public String getPassword() {

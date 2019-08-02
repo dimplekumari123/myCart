@@ -16,7 +16,7 @@ public class UserEntity {
 	private Long id;
 	private String userName;
 	private String email;
-	private Long moblileNo;
+	private int moblileNo;
 	private String password;
 	@Transient
 	private String  confirmPassword;
@@ -52,11 +52,11 @@ public class UserEntity {
 		this.email = email;
 	}
 
-	public Long getMoblileNo() {
+	public int getMoblileNo() {
 		return moblileNo;
 	}
 
-	public void setMoblileNo(Long moblileNo) {
+	public void setMoblileNo(int moblileNo) {
 		this.moblileNo = moblileNo;
 	}
 
