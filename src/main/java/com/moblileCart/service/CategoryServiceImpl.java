@@ -19,13 +19,16 @@ public class CategoryServiceImpl implements CategoryService {
 	public List<Product> getProduct(Long categoryId) {
 		// TODO Auto-generated method stub
 		Optional<Category> category = categoryRepository.findById(categoryId);
-		Category cate = new Category();
-		
+        Category category1 = new Category();
 		if (category.isPresent()) {
-			cate=category.get();
-			cate.setCountNo(cate.getCountNo() + 1);
-		}
-				return cate.getProduct();
+			 category1=category.get();
+			 if(category1.getCountNo() == null) {
+				 category1.setCountNo(0);
+			 }
+			category1.setCountNo(category1.getCountNo()+1);
+			categoryRepository.save(category1);
+	
 	}
-
+   return category1.getProduct();
+}
 }

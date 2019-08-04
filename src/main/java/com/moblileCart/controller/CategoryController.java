@@ -20,7 +20,7 @@ import com.moblileCart.service.CategoryServiceImpl;
 public class CategoryController {
 @Autowired  
 CategoryServiceImpl categoryServiceImpl;
-@PutMapping("/update/{id}")
+@GetMapping("/get/{id}")
 public ResponseEntity<List<Product>> getProduct(@PathVariable Long id){
 	List<Product> product=categoryServiceImpl.getProduct(id);
 	return new ResponseEntity<List<Product>> (product,HttpStatus.OK);
